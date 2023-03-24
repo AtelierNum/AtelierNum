@@ -1,0 +1,2 @@
+[submodule "db"]
+	url = https://github.com/zhakk-harn/librarian-db

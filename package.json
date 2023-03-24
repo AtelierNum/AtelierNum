@@ -1,0 +1,38 @@
+{
+  "name": "librarian",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "pages:init": "wrangler pages project create ateliernum --production-branch main",
+    "publish": "rimraf ./dist && vite build && wrangler pages publish ./dist --project-name ateliernum",
+    "wrangler:logout": "wrangler logout"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhakk-harn/librarian.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "GNU GPLV3.0",
+  "bugs": {
+    "url": "https://github.com/zhakk-harn/librarian/issues"
+  },
+  "homepage": "https://github.com/zhakk-harn/librarian#readme",
+  "dependencies": {
+    "@lyrasearch/lyra": "^0.4.9",
+    "dotenv": "^16.0.3",
+    "idb-keyval": "^6.2.0",
+    "isomorphic-git": "^1.21.0"
+  },
+  "devDependencies": {
+    "bundlemon": "^2.0.1",
+    "rimraf": "^4.4.0",
+    "sharp": "^0.31.3",
+    "vite": "^4.0.4",
+    "wrangler": "^2.13.0"
+  }
+}
