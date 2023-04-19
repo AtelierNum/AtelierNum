@@ -1037,7 +1037,7 @@
         newArticle.querySelector("h2").innerText = article.title;
         newArticle.querySelector(".description").innerText =
           article.description;
-        newArticle.querySelector(".authors").innerText = article.authors;
+        newArticle.querySelector(".authors").innerText = article.authors || "";
         newArticle.querySelector("img").src = article.thumbnail;
         newArticle.querySelector(".resource-type").dataset.type = article.type;
         newArticle.querySelectorAll("a").forEach((a) => (a.href = article.url));
