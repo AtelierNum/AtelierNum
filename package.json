@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/zhakk-harn/librarian#readme",
   "dependencies": {
-    "@lyrasearch/lyra": "^0.4.9",
+    "@orama/orama": "^1.0.0-beta.10",
     "dotenv": "^16.0.3",
     "idb-keyval": "^6.2.0",
     "isomorphic-git": "^1.21.0"

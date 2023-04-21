@@ -682,7 +682,7 @@
     </template>
 
     <script type="module">
-      import { create, search, insert, remove } from "@lyrasearch/lyra";
+      import { create, search, insert, remove } from "@orama/orama";
 
       const LOADING_INCREMENT = 3;
 
@@ -724,7 +724,7 @@
       // to show the exist, but we will never search on these
       // it's just a way to not index them : https://docs.lyrasearch.io/usage/insert-data
       // top-level await still not commonly supported :/
-      let lyraDB;
+      let oramaDB;
       create({
         schema: {
           id: "string",
@@ -736,7 +736,7 @@
           //destination: "string"
           tags: "string", // it should probably be an array of strings, but lyra only supports strings right now so let's concat
         },
-      }).then((createdDB) => (lyraDB = createdDB));
+      }).then((createdDB) => (oramaDB = createdDB));
 
       let filtersState = localStorage.getItem("filtersState");
 
@@ -1068,9 +1068,13 @@
 
         const searchResults = await Promise.all(
           searchTerms.map((term) =>
-            search(lyraDB, {
+            search(oramaDB, {
               term: term,
               properties: ["title", "description", "tags", "authors"],
+              boost: {
+                title: 2,
+                authors: 2,
+              },
             })
           )
         );
@@ -1129,7 +1133,7 @@
 
         await Promise.all(
           entries.map(([id, document]) =>
-            insert(lyraDB, {
+            insert(oramaDB, {
               ...document,
               tags: document.tags.join(" "),
               authors: document.authors ? document.authors : "",
