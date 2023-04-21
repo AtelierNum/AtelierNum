@@ -1075,7 +1075,9 @@
           )
         );
 
-        const finalHitList = searchResults
+        console.log(searchResults);
+
+        const hitMap = searchResults
           .map((searchResult) => searchResult.hits)
           .map((hitList) =>
             hitList.filter(
@@ -1084,7 +1086,21 @@
                 filtersState.languages[hit.document.language]
             )
           )
-          .flat(Infinity);
+          .flat(Infinity)
+          .reduce((acc, hit) => {
+            if (acc[hit.id]) {
+              acc[hit.id].score += hit.score;
+            } else {
+              acc[hit.id] = hit;
+            }
+            return acc;
+          }, {});
+
+        console.log(hitMap);
+
+        const finalHitList = Object.values(hitMap).sort(
+          (a, b) => a.score < b.score
+        );
 
         inViewDocuments.set(finalHitList.map((h) => h.document));
 
