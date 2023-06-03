@@ -518,18 +518,24 @@
       // like sending a request for the updated database (but not waiting for it to arrive)
       let db = {};
       let dbLoaded = false;
-      const futureDB = new Promise((resolve, reject) => {
+      const futureDB = new Promise(async (resolve, reject) => {
         // fetch("/db/db.json")
-        fetch(
+        const githubResponse = await fetch(
           "https://raw.githubusercontent.com/AtelierNum/AtelierNum.github.ioDB/main/db.json"
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            db = data;
-            dbLoaded = true;
-            resolve(db);
-          })
-          .catch((err) => reject(err));
+        );
+
+        const pagesResponse = await fetch(
+          "https://ateliernum-templates.pages.dev/state.json"
+        );
+
+        const coursesAndResAndProjects = await githubResponse.json();
+        const templates = Object.values(await pagesResponse.json());
+
+        templates.forEach((t) => (t.type = "template"));
+
+        db = coursesAndResAndProjects.concat(templates);
+        dbLoaded = true;
+        resolve(db);
       });
     </script>
     <script type="module" crossorigin src="/assets/main-5052d8a2.js"></script>
