@@ -28,6 +28,46 @@
     <meta name="theme-color" content="#ffffff" />
     <!-- end of favicon and its fallbacks -->
     
+    <style id="colors">
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #242424;
+          --text-color: #e3e3e3;
+          --color-highlight: white;
+        }
+
+        /* it means it a grophical object on the second layer of the page, starting from the bottom */
+        .paper2 {
+          background-color: #1a1a1a;
+        }
+      }
+
+      @media (prefers-color-scheme: light) {
+        :root {
+          --background-color: #fbfbfb;
+          --text-color: black;
+          --color-highlight: black;
+        }
+
+        .paper2 {
+          background-color: white;
+
+          --shadow-color: #0000005b;
+          box-shadow: 0.2px 0.3px 0.4px var(--shadow-color),
+            0.8px 1px 1.4px -0.8px var(--shadow-color),
+            2.1px 2.4px 3.6px -1.7px var(--shadow-color),
+            5px 5.8px 8.6px -2.5px var(--shadow-color);
+        }
+      }
+
+      @media (prefers-color-scheme: light) and (max-width: 768px) {
+        main h2,
+        main p {
+          padding: var(--size-2);
+          background-color: #ffffff55;
+        }
+      }
+    </style>
     <style id="css-resets">
       /* resets */
       body {
@@ -99,8 +139,8 @@
     </style>
     <style id="elements-styling">
       body {
-        background-color: #242424;
-        color: #e3e3e3;
+        background-color: var(--background-color);
+        color: var(--text-color);
 
         scroll-behavior: smooth;
 
@@ -133,7 +173,7 @@
         position: sticky;
         top: 0;
 
-        background-color: #242424;
+        background-color: var(--background-color);
 
         padding: var(--size-6);
 
@@ -148,8 +188,7 @@
         padding: var(--size-4) var(--size-2);
         border-radius: var(--size-4);
 
-        background-color: #1a1a1a;
-        color: white;
+        color: var(--text-color);
 
         display: flex;
         align-items: center;
@@ -198,7 +237,6 @@
         display: flex;
         flex-direction: column;
 
-        background-color: #1a1a1a;
         border-radius: var(--size-4);
       }
 
@@ -224,7 +262,7 @@
       }
 
       .legal-disclaimer:hover {
-        color: white;
+        color: var(--color-highlight);
         text-decoration: underline;
       }
 
@@ -245,7 +283,7 @@
       }
 
       .socials > *:hover {
-        color: white;
+        color: var(--color-highlight);
       }
 
       article {
@@ -262,8 +300,6 @@
 
       article .authors {
         font-weight: 700;
-        color: rgb(235, 235, 245);
-
         margin-top: 0;
       }
 
@@ -349,19 +385,12 @@
         min-width: 200px;
         height: 100vh;
 
-        background-color: #1a1a1a;
-
         display: flex;
         flex-direction: column;
       }
 
       #mobile-filters > * {
         margin-bottom: var(--size-7);
-      }
-
-      #mobile-menu-background {
-        background-color: black;
-        opacity: 0.3;
       }
 
       #menu-opener {
@@ -380,7 +409,7 @@
       }
 
       #mobile-filters li:hover {
-        background-color: #242424;
+        background-color: var(--background-color);
       }
 
       #mobile-filters li > *:nth-child(2) {
@@ -538,8 +567,7 @@
         resolve(db);
       });
     </script>
-    <script type="module" crossorigin src="/assets/main-5052d8a2.js"></script>
-    <link rel="stylesheet" href="/assets/sizes-2fabb1b7.css">
+    <script type="module" crossorigin src="/assets/main-e8ef32c4.js"></script>
   </head>
   <body>
     <header>
@@ -548,7 +576,7 @@
     </header>
     <nav id="search-bar">
       <span class="flex-spacer"></span>
-      <div id="search-field">
+      <div id="search-field" class="paper2">
         <!-- prettier-ignore -->
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="-0.25 -0.25 14.5 14.5" height="48" width="48" stroke-width="1.5"><g><circle cx="5.92" cy="5.92" r="5.42" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></circle><line x1="13.5" y1="13.5" x2="9.75" y2="9.75" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></line></g></svg>
         <input
@@ -560,7 +588,7 @@
       <span class="flex-spacer"></span>
     </nav>
     <aside>
-      <div id="aside-content">
+      <div id="aside-content" class="paper2">
         <ul id="language-filters">
           <li>
             <input type="checkbox" data-language="en" checked />🇬🇧 English
@@ -621,7 +649,7 @@
     <span id="main-end"></span>
 
     <div id="mobile-menu" data-open="false">
-      <div id="mobile-menu-content">
+      <div id="mobile-menu-content" class="paper2">
         <header>
           <!-- <img src="/assets/images/logo_ateliernum.png" alt="" /> -->
           <h1>Ateliernum</h1>
