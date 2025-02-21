@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+	<symbol
+		id="short"
+		aria-label="short"
+		viewBox="0 0 14 14"
+		fill="none"
+		role="img"
+		focusable="false"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		<rect
+			x="1"
+			y="1"
+			width="12"
+			height="12"
+			rx="6"
+			stroke="var(--color)"
+			stroke-width="2"
+			fill="none"
+		></rect>
+		<path
+			fill="var(--color)"
+			stroke="none"
+			d="M 3.5,3.5 
+			L 3.5,0 
+			A 3.5,3.5 0 0,1 7, 3.5 
+			z"
+			transform="translate(3.5,3.5)"
+		></path>
+	</symbol>
+
+	<symbol
+		id="medium"
+		aria-label="medium"
+		viewBox="0 0 14 14"
+		fill="none"
+		role="img"
+		focusable="false"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+		 <rect
+                x="1"
+                y="1"
+                width="12"
+                height="12"
+                rx="6"
+                stroke="var(--color)"
+                stroke-width="2"
+                fill="none"
+              ></rect>
+              <path
+                fill="var(--color)"
+                stroke="none"
+                d="M 3.5,3.5 L3.5,0 A3.5,3.5 0 0,1 3.5, 7 z"
+                transform="translate(3.5,3.5)"
+              ></path>
+	</symbol>
+
+	<symbol
+		id="long"
+		aria-label="long"
+		viewBox="0 0 14 14"
+		fill="none"
+		role="img"
+		focusable="false"
+		xmlns="http://www.w3.org/2000/svg"
+	>
+   <rect
+                x="1"
+                y="1"
+                width="12"
+                height="12"
+                rx="6"
+                stroke="var(--color)"
+                stroke-width="2"
+                fill="none"
+              ></rect>
+              <path
+                fill="var(--color)"
+                stroke="none"
+                d="M 3.5,3.5 
+					L 3.5,0 
+					A 3.5,3.5 0 1,1 0, 3.5 
+					z"
+                transform="translate(3.5,3.5)"
+              ></path>
+	</symbol>
+</svg>

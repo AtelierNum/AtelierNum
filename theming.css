@@ -1,0 +1,38 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #242424;
+    --text-color: #e3e3e3;
+    --color-highlight: white;
+  }
+
+  /* it means it a grophical object on the second layer of the page, starting from the bottom */
+  .paper2 {
+    background-color: #1a1a1a;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #fbfbfb;
+    --text-color: black;
+    --color-highlight: black;
+  }
+
+  .paper2 {
+    background-color: white;
+
+    --shadow-color: #0000005b;
+    box-shadow: 0.2px 0.3px 0.4px var(--shadow-color),
+      0.8px 1px 1.4px -0.8px var(--shadow-color),
+      2.1px 2.4px 3.6px -1.7px var(--shadow-color),
+      5px 5.8px 8.6px -2.5px var(--shadow-color);
+  }
+}
+
+@media (prefers-color-scheme: light) and (max-width: 768px) {
+  main h2,
+  main p {
+    padding: var(--size-2);
+    background-color: #ffffff;
+  }
+}
