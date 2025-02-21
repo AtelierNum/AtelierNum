@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         mentions: resolve(__dirname, "mentions.html"),
+        quests: resolve(__dirname, "quests.html"),
       },
     },
   },
